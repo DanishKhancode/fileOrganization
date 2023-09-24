@@ -16,9 +16,14 @@ function organized(srcPath) {
     }
     // else console.log(srcPath);
     let organizeFiles = path.join(srcPath, "organize_files");
+    // let organizeFiles = srcPath + "/" + "organize_files";
     if (fs.existsSync(organizeFiles) == false) { //organizeFile name ka folder exist nhi krta ha to bana do 
         // console.log(organizeFiles);
         fs.mkdirSync(organizeFiles);
     } else console.log("file already exist");
 }
-organized();
+let srcPath = "D:\FileOrganizer\downloads";
+organized(srcPath);
+
+
+//1:57
