@@ -65,10 +65,19 @@ function getFolderName(ext) {
 function copyFileToDes(srcPath, fullPathOfFile, folderName) {
     // folder ka path banana ha 
     
-        let desFolderPath = path.join(srcPath, "organized_files", folderName);
+    let desFolderPath = path.join(srcPath, "organized_files", folderName);
+    //check folder if exist , if does not exit ,then make folder
     if (!fs.existsSync(desFolderPath)) {
         fs.mkdirSync(desFolderPath);
     }
+
+    // copy file from src folder to dest folder
+
+    //  basename -> return a last portion of a path
+
+    let fileName = path.basename(fullPathOfFile); //abc.zip
+    let desfileName = path.join(desFolderPath, fileName);
+    fs.copyFileSync(fullPathOfFile, desfileName);
 }
 let srcPath = "D:/FileOrganizer/downloads";
 // let srcPath = "";
