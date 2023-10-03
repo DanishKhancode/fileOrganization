@@ -46,7 +46,7 @@ function organize(srcPath) {
             console.log(folderName);
 
 
-            // copyFileToDes(srcPath, fullPathOfFile, folderName);
+            copyFileToDes(srcPath, fullPathOfFile, folderName);
         }
 
     }
@@ -62,14 +62,14 @@ function getFolderName(ext) {
         }
     }
 }
-// function copyFileToDes(srcPath, fullPathOfFile, folderName) {
-//     // folder ka path banana ha 
+function copyFileToDes(srcPath, fullPathOfFile, folderName) {
+    // folder ka path banana ha 
     
-//         let desFolderPath = path.join(srcPath, "organized_file", folderName);
-//     if (!fs.existsSync(desFolderPath)) {
-//         fs.mkdirSync(desFolderPath);
-//     }
-// }
+        let desFolderPath = path.join(srcPath, "organized_files", folderName);
+    if (!fs.existsSync(desFolderPath)) {
+        fs.mkdirSync(desFolderPath);
+    }
+}
 let srcPath = "D:/FileOrganizer/downloads";
 // let srcPath = "";
 console.log(srcPath);
