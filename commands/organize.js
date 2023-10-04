@@ -1,4 +1,4 @@
-// const { execSync } = require("child_process");
+const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
   let types = {
@@ -25,27 +25,24 @@ function organize(srcPath) {
 
     let allfiles = fs.readdirSync(srcPath);
     // console.log(allfiles);
-    
+      // traverse krenge sari file pr or un ke extension pr un ko classify krenge 
     for (let i = 0; i < allfiles.length; i++){
-        // let ext = allfiles[i].split(".")[1];
-        
-        
-        // let ext = path.extname(allfiles[i]);
-        // console.log(ext);
-
-
+       
         let fullPathOfFile = path.join(srcPath, allfiles[i]);
-        // console.log(fullPathOfFile);
-        let isfile = fs.lstatSync(fullPathOfFile).isFile();
+        console.log(fullPathOfFile);
+      // 1. check if it is a folder or file 
+        // lstatsync give the information regarding the link provided.. ye batata ha jo hmne deya ha file ya folder
+        let isfile = fs.lstatSync(fullPathOfFile).isFile();  //agr file ha to true return krega agr folder to  false retrun  
         console.log(allfiles[i] + " is " + isfile);
         if (isfile) {
+            // get ext name...  khali zip  lane ke leye split use hota ha  
             let ext = path.extname(allfiles[i]).split(".")[1];
             // console.log(ext);
 
             let folderName = getFolderName(ext);
             console.log(folderName);
-
-
+            // copy from sorce folder (srcPath) and paste in dest folder(folder_name e.g document , media)
+                         // copy    kya copy kro    paste
             copyFileToDes(srcPath, fullPathOfFile, folderName);
         }
 
@@ -61,6 +58,7 @@ function getFolderName(ext) {
             }
         }
     }
+    return "miscellaneous"
 }
 function copyFileToDes(srcPath, fullPathOfFile, folderName) {
     // folder ka path banana ha 
@@ -77,9 +75,15 @@ function copyFileToDes(srcPath, fullPathOfFile, folderName) {
 
     let fileName = path.basename(fullPathOfFile); //abc.zip
     let desfileName = path.join(desFolderPath, fileName);
+               // copy hua source se // or paste hua dest me 
     fs.copyFileSync(fullPathOfFile, desfileName);
 }
+
+
 let srcPath = "D:/FileOrganizer/downloads";
-// let srcPath = "";
-console.log(srcPath);
 organize(srcPath);
+
+//  module.exports = {
+//     organize : organize,
+// }
+

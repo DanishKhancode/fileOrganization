@@ -10,9 +10,8 @@ function help() {
 // function abc() {
 //     console.log("in help.js");
 // }
+
+
 module.exports = {
-    
     help: help,
-    //  hathi :abc
-    
 }
