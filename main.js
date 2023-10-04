@@ -1,10 +1,11 @@
-const path = require("path");
+// const path = require("path");
 let helpRequire = require("./commands/help");
 let orgfun = require("./commands/organize");
 let treeFunc = require("./commands/tree");
 // console.log(helpRequire.help());
 let inputArr = process.argv.slice(2);
 let command = inputArr[0];
+let path = inputArr[1];
 switch (command) {
     case "tree":
         treeFunc.tree(path);

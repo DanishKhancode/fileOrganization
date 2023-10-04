@@ -80,10 +80,10 @@ function copyFileToDes(srcPath, fullPathOfFile, folderName) {
 }
 
 
-let srcPath = "D:/FileOrganizer/downloads";
-organize(srcPath);
+// let srcPath = "D:/FileOrganizer/downloads";
+// organize(srcPath);
 
-//  module.exports = {
-//     organize : organize,
-// }
+ module.exports = {
+    organize : organize,
+}
 

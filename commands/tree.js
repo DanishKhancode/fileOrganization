@@ -26,9 +26,9 @@ function treeHelper(targetPath, indent) {
         treeHelper(childPath, indent + "\t");
     }
 }
-// module.exports = {
-//     tree: treeFn,
-// }
+module.exports = {
+    tree: treeFn,
+}
 
-let srcPath = "D:/FileOrganizer/downloads";
-treeFn(srcPath);
+// let srcPath = "D:/FileOrganizer/downloads";
+// treeFn(srcPath);
