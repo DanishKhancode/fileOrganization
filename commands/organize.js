@@ -25,6 +25,7 @@ function organize(srcPath) {
 
     let allfiles = fs.readdirSync(srcPath);
     // console.log(allfiles);
+    
       // traverse krenge sari file pr or un ke extension pr un ko classify krenge 
     for (let i = 0; i < allfiles.length; i++){
        
@@ -45,10 +46,8 @@ function organize(srcPath) {
                          // copy    kya copy kro    paste
             copyFileToDes(srcPath, fullPathOfFile, folderName);
         }
-
     }
 }
-
 function getFolderName(ext) {
     for (let key in types) {
         // console.log(key);
@@ -61,8 +60,8 @@ function getFolderName(ext) {
     return "miscellaneous"
 }
 function copyFileToDes(srcPath, fullPathOfFile, folderName) {
-    // folder ka path banana ha 
-    
+  
+    // folder ka path banana ha
     let desFolderPath = path.join(srcPath, "organized_files", folderName);
     //check folder if exist , if does not exit ,then make folder
     if (!fs.existsSync(desFolderPath)) {
@@ -70,7 +69,6 @@ function copyFileToDes(srcPath, fullPathOfFile, folderName) {
     }
 
     // copy file from src folder to dest folder
-
     //  basename -> return a last portion of a path
 
     let fileName = path.basename(fullPathOfFile); //abc.zip
@@ -78,8 +76,6 @@ function copyFileToDes(srcPath, fullPathOfFile, folderName) {
                // copy hua source se // or paste hua dest me 
     fs.copyFileSync(fullPathOfFile, desfileName);
 }
-
-
 // let srcPath = "D:/FileOrganizer/downloads";
 // organize(srcPath);
 

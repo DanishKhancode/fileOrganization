@@ -1,4 +1,3 @@
-// const path = require("path");
 let helpRequire = require("./commands/help");
 let orgfun = require("./commands/organize");
 let treeFunc = require("./commands/tree");
@@ -18,6 +17,5 @@ switch (command) {
         break;
     default:
         console.log("command not recognize");
-        break;
-        
+        break;   
 }
