@@ -1,3 +1,7 @@
+// node main.js help
+// node main.js organize D:/FileOrganizer/downloads
+// node main.js tree D:/FileOrganizer
+
 let helpRequire = require("./commands/help");
 let orgfun = require("./commands/organize");
 let treeFunc = require("./commands/tree");
